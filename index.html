@@ -101,6 +101,10 @@
         }
 
         /* HERO SECTION */
+        .hero-section {
+             padding-top: 3rem;
+        }
+
         .hero {
             display: grid;
             grid-template-columns: 3fr 2fr;
@@ -138,6 +142,26 @@
             color: white;
         }
 
+        /* ABOUT SECTION */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
         /* GALLERY SECTION */
         .gallery-grid {
             display: grid;
@@ -157,6 +181,19 @@
             opacity: 0.9;
         }
 
+        /* SERVICES SECTION */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            text-align: center;
+        }
+        .service-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-text);
+        }
+
         /* FOOTER */
         .main-footer {
             padding: 3rem 0;
@@ -164,19 +201,34 @@
             border-top: 1px solid #e0e0e0;
         }
 
+        .footer-contact {
+            margin-bottom: 2rem;
+        }
+
         .main-footer p {
             font-size: 0.9rem;
             color: var(--secondary-text);
+            margin: 0 0 0.5rem 0;
+        }
+
+        .main-footer p:last-child {
+            margin-bottom: 0;
         }
 
         /* RESPONSIVENESS */
         @media (max-width: 900px) {
-            .hero {
+            .hero, .about-grid {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
             .hero-text {
                 padding-left: 0;
+            }
+            .about-text h2 {
+                text-align: center;
+            }
+             .about-image {
+                order: -1; /* Stack image on top for mobile */
             }
         }
 
@@ -186,6 +238,11 @@
 
             .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
             }
         }
 
@@ -224,7 +281,7 @@
             <div class="container">
                 <div class="hero">
                     <div class="hero-image">
-                        <img src="https://source.unsplash.com/800x600/?minimalist,architecture" alt="Minimalist architecture">
+                        <img src="https://source.unsplash.com/psJUPv00fgU/800x600" alt="Minimalist architecture">
                     </div>
                     <div class="hero-text">
                         <h1>Where Form Meets Function</h1>
@@ -235,27 +292,62 @@
             </div>
         </section>
 
+        <section class="about-section">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h2>About Atelier</h2>
+                        <p>Atelier was founded on the simple principle that good design enhances the human experience. We believe in spaces that are minimal, not for the sake of emptiness, but for the sake of quiet, intention, and clarity.</p>
+                        <p>Our work is a dialogue between light, material, and form, tailored to the unique life of its inhabitants.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://source.unsplash.com/tWO9hqW05o8/600x600" alt="Minimalist interior detail">
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="gallery-section">
             <div class="container">
                 <h2>Selected Projects</h2>
                 <div class="gallery-grid">
                     <div class="gallery-item">
-                        <img src="https://source.unsplash.com/400x400/?interior,design,minimal" alt="Minimalist interior design 1">
+                        <img src="https://source.unsplash.com/Ex31URRzdPg/400x400" alt="Minimalist interior design 1">
                     </div>
                     <div class="gallery-item">
-                        <img src="https://source.unsplash.com/400x400/?architecture,minimalist" alt="Minimalist interior design 2">
+                        <img src="https://source.unsplash.com/RK03mkfIG5s/400x400" alt="Minimalist interior design 2">
                     </div>
                     <div class="gallery-item">
-                        <img src="https://source.unsplash.com/400x400/?house,interior" alt="Minimalist interior design 3">
+                        <img src="https://source.unsplash.com/-z8RNAxt2vI/400x400" alt="Minimalist interior design 3">
                     </div>
                     <div class="gallery-item">
-                        <img src="https://source.unsplash.com/400x400/?modern,architecture" alt="Minimalist interior design 4">
+                        <img src="https://source.unsplash.com/MzdTRVlHsn8/400x400" alt="Minimalist interior design 4">
                     </div>
                     <div class="gallery-item">
-                        <img src="https://source.unsplash.com/400x400/?minimalist,living,room" alt="Minimalist interior design 5">
+                        <img src="https://source.unsplash.com/3sM-B6UNe5E/400x400" alt="Minimalist interior design 5">
                     </div>
                     <div class="gallery-item">
-                        <img src="https://source.unsplash.com/400x400/?concrete,architecture" alt="Minimalist interior design 6">
+                        <img src="https://source.unsplash.com/Yj3pk4ar_ck/400x400" alt="Minimalist interior design 6">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <h3>Residential Design</h3>
+                        <p>Creating homes that are a sanctuary from the outside world.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Commercial Spaces</h3>
+                        <p>Designing environments that foster focus, creativity, and community.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Interior Planning</h3>
+                        <p>Curating materials, furniture, and light to create a cohesive whole.</p>
                     </div>
                 </div>
             </div>
@@ -264,6 +356,11 @@
 
     <footer class="main-footer">
         <div class="container">
+            <div class="footer-contact">
+                <p>123 Design Street, New York, NY</p>
+                <p>(123) 456-7890</p>
+                <p>hello@atelier.design</p>
+            </div>
             <p>&copy; 2025 Atelier. Design for the discerning.</p>
         </div>
     </footer>
